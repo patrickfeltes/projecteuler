@@ -70,4 +70,16 @@ def digit_sum(n):
         n /= 10
     return total
 
-
+# return a list of length (n + 1) with booleans of true when a number at index i is prime
+def sieve_of_eratosthenes(n):
+    prime_lst = [True] * (n + 1)
+    prime_lst[0] = False
+    prime_lst[1] = False
+    for i in xrange(2, int(math.sqrt(n)) + 1):
+        if prime_lst[i]:
+            mult = 0
+            square = i ** 2
+            while square + mult * i <= n:
+                prime_lst[square + mult * i] = False
+                mult += 1
+    return prime_lst
