@@ -14,8 +14,6 @@ def find_max_r(a):
 		else:
 			max_val = max(max_val, val)
 			possible.add(val)
-
-
 		n += 2
 	return max_val
 

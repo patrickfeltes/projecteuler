@@ -33,7 +33,6 @@ def evaluate(coeff_list, x):
 
 def fit(values, num_given):
 	coeff_list = poly_fit(values[:num_given])
-	print coeff_list
 	for x in xrange(len(values)):
 		if values[x] != evaluate(coeff_list, x + 1):
 			return evaluate(coeff_list, x + 1)

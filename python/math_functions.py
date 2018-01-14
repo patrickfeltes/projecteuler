@@ -83,3 +83,27 @@ def sieve_of_eratosthenes(n):
                 prime_lst[square + mult * i] = False
                 mult += 1
     return prime_lst
+
+def first_n_primes(n):
+    primes = []
+    i = 2
+    while True:
+        if is_prime(i):
+            primes.append(i)
+        if len(primes) == n:
+            break
+        else:
+            i += 1
+    return primes
+
+def get_n_primes_from_file(n):
+    f = open('../textfiles/primes.txt')
+    primes = map(int, (f.read().split(',')))[:n]
+    f.close()
+    return primes
+
+def get_all_primes_from_file():
+    f = open('../textfiles/primes.txt')
+    primes = map(int, (f.read().split(',')))
+    f.close()
+    return primes
