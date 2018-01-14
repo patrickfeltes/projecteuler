@@ -24,7 +24,7 @@ def poly_fit(values):
 	# coefficient list for resulting polynomial
 	return map(lambda x : int(round(x)), list(np.linalg.solve(coeff_mat, solution_mat)))
 
-# given a list of coefficients for a polynomial, and a point, evaluate
+# given a list of coefficients for a polynomial and a point, evaluate
 def evaluate(coeff_list, x):
 	total = 0
 	for i in xrange(len(coeff_list)):
